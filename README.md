@@ -1,8 +1,15 @@
-# React + Vite
+# React + Vite Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project is a practice application created using React and Vite. It serves as an exploration of integrating with an open-source weather API provided by [open-meteo.com](https://open-meteo.com/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Note: This project is still in progress.**
+
+## Features
+
+- Fetches current weather data using the open-meteo API.
+- Built with React and Vite for a modern development environment.
+
+
+
