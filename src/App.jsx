@@ -18,7 +18,7 @@ export const App = () => {
       }
 
       // Make an HTTP request to OpenWeatherMap API
-      const apiKey = process.env.OPENWEATHERMAP_API_KEY;
+      const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}&units=imperial`);
       const data = await response.json();
 
