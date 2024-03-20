@@ -18,7 +18,8 @@ export const App = () => {
       }
 
       // Make an HTTP request to OpenWeatherMap API
-      const apiKey = import.meta.env.REACT_APP_OPENWEATHERMAP_API_KEY;
+      const apiKey = import.meta.env.VITE_REACT_APP_OPENWEATHERMAP_API_KEY;
+
 
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}&units=imperial`);
       const data = await response.json();
@@ -35,33 +36,32 @@ export const App = () => {
       <div className="center-container">
         <h1>How's the Weather?</h1>
         <div className="card">
-         
           <div className="input-container">
-          <div>Enter ZIP Code: </div>
+            <div>Enter ZIP Code: </div>
             <input
-              type="text"
-              value={zipCode}
-              onChange={handleZipCodeChange}
-              placeholder="e.g., 12345"
-              required
-            />
-            
+        type="text"
+        id="zipCodeInput" // Adding id attribute
+        name="zipCode" // Adding name attribute
+        value={zipCode}
+        onChange={handleZipCodeChange}
+        placeholder="e.g., 12345"
+        required
+      />
           </div>
           <button onClick={fetchWeatherData}>Get Weather</button>
           {weatherData && (
-             <div className="bg-gray-100 p-4 rounded-md shadow-md">
-             <p className="text-xl font-semibold">Location: {weatherData.name}, {weatherData.sys.country}</p>
-             <p className="text-lg">Time: {new Date(weatherData.dt * 1000).toLocaleTimeString()}</p>
-             <p className="text-3xl font-bold">Temperature: {weatherData.main.temp}&deg;F</p>
-             <p className="text-lg">Weather: {weatherData.weather[0].description}</p>
-             <p className="text-lg">Min Temperature: {weatherData.main.temp_min}&deg;F</p>
-             <p className="text-lg">Max Temperature: {weatherData.main.temp_max}&deg;F</p>
-             <p className="text-lg">Humidity: {weatherData.main.humidity}%</p>
-             <p className="text-lg">Wind Speed: {weatherData.wind.speed} mph</p>
-             {weatherData.rain && <p className="text-lg">Rain (1h): {weatherData.rain["1h"]} inches</p>}
-           </div>
+            <div className="bg-gray-100 p-4 rounded-md shadow-md">
+              <p className="text-xl font-semibold">Location: {weatherData.name}, {weatherData.sys.country}</p>
+              <p className="text-lg">Time: {new Date(weatherData.dt * 1000).toLocaleTimeString()}</p>
+              <p className="text-3xl font-bold">Temperature: {weatherData.main.temp}&deg;F</p>
+              <p className="text-lg">Weather: {weatherData.weather[0].description}</p>
+              <p className="text-lg">Min Temperature: {weatherData.main.temp_min}&deg;F</p>
+              <p className="text-lg">Max Temperature: {weatherData.main.temp_max}&deg;F</p>
+              <p className="text-lg">Humidity: {weatherData.main.humidity}%</p>
+              <p className="text-lg">Wind Speed: {weatherData.wind.speed} mph</p>
+              {weatherData.rain && <p className="text-lg">Rain (1h): {weatherData.rain["1h"]} inches</p>}
+            </div>
           )}
-
         </div>
       </div>
     </>
