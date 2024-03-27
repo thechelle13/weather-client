@@ -31,39 +31,50 @@ export const App = () => {
     }
   };
 
+  const getWeatherIconUrl = (iconCode) => {
+    return `http://openweathermap.org/img/wn/${iconCode}.png`;
+  };
+
   return (
     <>
-      <div className="center-container">
-        <h1>How's the Weather?</h1>
+     <h1>How's the Weather?</h1>
+     
+      
         <div className="card">
-          <div className="input-container">
-            <div>Enter ZIP Code: </div>
-            <input
-        type="text"
-        id="zipCodeInput" // Adding id attribute
-        name="zipCode" // Adding name attribute
-        value={zipCode}
-        onChange={handleZipCodeChange}
-        placeholder="e.g., 12345"
-        required
-      />
-          </div>
-          <button onClick={fetchWeatherData}>Get Weather</button>
+        <div className="input-container">
+  <label htmlFor="zipCodeInput" className="block text-gray-700 font-bold mb-2">Enter ZIP Code:</label>
+  <input
+    type="text"
+    id="zipCodeInput" 
+    name="zipCode" 
+    value={zipCode}
+    onChange={handleZipCodeChange}
+    placeholder="e.g., 12345"
+    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    required
+  />
+</div>
+
+          <button onClick={fetchWeatherData} >Get Weather</button>
           {weatherData && (
-            <div className="bg-gray-100 p-4 rounded-md shadow-md">
+            <div className="bg-gray-100 p-4 rounded-md shadow-md my-4">
               <p className="text-xl font-semibold">Location: {weatherData.name}, {weatherData.sys.country}</p>
               <p className="text-lg">Time: {new Date(weatherData.dt * 1000).toLocaleTimeString()}</p>
+              <img src={getWeatherIconUrl(weatherData.weather[0].icon)} alt="Weather Icon" className="inline-block w-8 h-8 mr-2" />
               <p className="text-3xl font-bold">Temperature: {weatherData.main.temp}&deg;F</p>
+              <p>Feels Like: {weatherData.main.feels_like}&deg;F</p>
               <p className="text-lg">Weather: {weatherData.weather[0].description}</p>
               <p className="text-lg">Min Temperature: {weatherData.main.temp_min}&deg;F</p>
               <p className="text-lg">Max Temperature: {weatherData.main.temp_max}&deg;F</p>
               <p className="text-lg">Humidity: {weatherData.main.humidity}%</p>
               <p className="text-lg">Wind Speed: {weatherData.wind.speed} mph</p>
+              <p className="text-lg">Visibility: {weatherData.visibility} </p>
+              
               {weatherData.rain && <p className="text-lg">Rain (1h): {weatherData.rain["1h"]} inches</p>}
             </div>
           )}
         </div>
-      </div>
+      
     </>
   );
 };
