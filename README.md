@@ -2,9 +2,12 @@
 
 ## Overview
 
-This project is a weather application built with React and Vite, aimed at providing users with real-time weather information. It leverages the open-source weather API provided by [OpenWeather](https://openweathermap.org/) to fetch current weather data based on user-provided ZIP codes. 
+This project is a front end only weather application built with React and Vite, aimed at providing users with real-time weather information. It leverages the open-source weather API provided by [OpenWeather](https://openweathermap.org/) to fetch current weather data based on user-provided ZIP codes. 
 
 **Note: This project is in progress.**
+
+## Deployed URL: 
+https://weather-8usah.ondigitalocean.app/
 
 ## Features
 

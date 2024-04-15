@@ -11,49 +11,10 @@
 }
 
 
-.center-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #f7fafc; 
-}
 
-.card {
-  background-color: #0ca4f0; 
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  padding: 2rem;
-  max-width: 480px; 
-}
 
-.input-container {
-  margin-bottom: 1.5rem;
-}
 
-button {
-  background-color: #007bff;
-  color: #007bff;
-  border: none;
-  border-radius: 9999px; 
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
-button:hover {
-  background-color: #170fed; 
-}
-
-h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  color: #333333; /* Dark text */
-}
 
 
 
